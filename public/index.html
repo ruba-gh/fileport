@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FilePort — P2P File Transfer</title>
+<link rel="stylesheet" href="style.css">
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+    <h1>FilePort</h1>
+
+    <!-- Your key -->
+    <div class="section">
+        <label><h2>Your Key:  <span id="myKey">—</span></h2></label>
+    </div>
+
+    <!-- Enter key to link -->
+    <div class="section">
+        <input type="text" id="linkKeyInput" placeholder="Enter device key to link">
+        <button id="linkBtn">Link Device</button>
+    </div>
+
+    <!-- File upload -->
+    <div class="section">
+        <input type="file" id="fileInput" multiple>
+        <h3>Drag & drop files here or click to select</h3>
+    </div>
+
+    <!-- Files box -->
+    <div id="fileBox" class="file-box">
+        <p>Transferred files will appear here:</p>
+    </div>
+</body>
+</html>
