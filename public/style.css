@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap');
 
-
 /* Body */
 body {
     font-family: 'Nata Sans', sans-serif;
@@ -25,24 +24,32 @@ h1 {
     font-size: 40px;
 }
 
-
 /* Sections */
 .section {
     max-width: 600px;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+}
+
+/* Labels */
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
 }
 
 /* Inputs */
-input[type=text], input[type=file] {
+input[type=text],
+input[type=file] {
     padding: 10px;
     font-size: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background: #fff;
     font-family: 'Nata Sans', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Buttons */
@@ -74,6 +81,11 @@ button:hover {
     overflow-y: auto;
     position: relative;
     font-family: 'Nata Sans', sans-serif;
+    transition: background 0.3s ease-in-out;
+}
+
+#fileBox:hover {
+    background: #f8fafc;
 }
 
 /* File items */
@@ -84,6 +96,7 @@ button:hover {
     padding: 8px;
     margin: 6px 0;
     font-family: 'Nata Sans', sans-serif;
+    word-wrap: break-word;
 }
 
 /* Airplane animation */
