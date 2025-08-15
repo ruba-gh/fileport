@@ -1,36 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FilePort — P2P File Transfer</title>
-<link rel="stylesheet" href="style.css">
-<script src="/socket.io/socket.io.js"></script>
-<script src="script.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FilePort — P2P File Transfer</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Same-origin Socket.IO (works on Render when server serves static files) -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>FilePort</h1>
+  <h1>FilePort</h1>
 
-    <!-- Your key -->
-    <div class="section">
-        <label><h2>Your Key:  <span id="myKey">—</span></h2></label>
+  <div class="card">
+    <div class="row">
+      <label>Your Key:</label>
+      <span id="myKey">—</span>
+      <button id="regen" class="ghost">Regenerate</button>
     </div>
 
-    <!-- Enter key to link -->
-    <div class="section">
-        <input type="text" id="linkKeyInput" placeholder="Enter device key to link">
-        <button id="linkBtn">Link Device</button>
+    <div class="row">
+      <input id="linkKeyInput" type="text" placeholder="Enter device key to link" />
+      <button id="linkBtn">Link Device</button>
+      <button id="disconnectBtn" class="ghost" disabled>Disconnect</button>
     </div>
 
-    <!-- File upload -->
-    <div class="section">
-        <input type="file" id="fileInput" multiple>
-        <h3>Drag & drop files here or click to select</h3>
-    </div>
+    <p id="status" class="muted">Open this page on both devices. Enter the other device’s key and link.</p>
+  </div>
 
-    <!-- Files box -->
-    <div id="fileBox" class="file-box">
-        <p>Transferred files will appear here:</p>
+  <div class="card">
+    <div class="row">
+      <input type="file" id="fileInput" multiple />
+      <span class="muted">Drag & drop into the box below, or choose files.</span>
     </div>
+    <div id="fileBox" class="drop">
+      <p class="muted">Transferred files will appear here:</p>
+      <div id="fileList"></div>
+    </div>
+  </div>
 </body>
 </html>
